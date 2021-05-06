@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,300;1,500&display=swap");
+* {
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #C0CFD6;
+}
+
+html, body,
+ul, ol, header, img {
+  padding: 0;
+  margin: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  border: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+
+h1, h2, h3, h4, h5, h6,
+p {
+  margin: 0;
+}
+
+.container {
+  width: 25rem;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.submitButton {
+  width: 100%;
+  height: 3rem;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  color: black;
+  background-color: white;
+}
+
+.list-wrapper {
+  width: 100%;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 1;
+  height: 3.5rem;
+  width: 25rem;
+  border-bottom: 1px solid black;
+  background-color: white;
+  transform: scaleX(0);
+  transition: all 500ms;
+}
+
+.overlay_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overlay_content input {
+  width: 80%;
+  height: 3.5rem;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 1px solid;
+  text-indent: 10px;
+}
+
+.overlay_content_close {
+  width: 10%;
+}
+
+.overlay_content_close > span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: black;
+  transform-origin: 12px 1px;
+}
+
+.overlay_content_close > span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.overlay_content_close > span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.overlay_content_close > span:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+.open {
+  transform: scaleX(1);
+}
+
+.header {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  height: 3.5rem;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.header .toggle > input {
+  display: none;
+}
+
+.header .toggle .toggle_label {
+  position: relative;
+  width: 30px;
+  height: 15px;
+  border-radius: 15px;
+  display: block;
+  border: 1px solid black;
+  transition: all 500ms;
+}
+
+.header .toggle .toggle_label::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  top: -1px;
+  left: 0;
+  border-radius: 10px;
+  transform: scale(1.1);
+  transition: all 500ms;
+}
+
+.header .toggle > input:checked ~ .toggle_label {
+  background-color: black;
+  border: 1px solid white;
+}
+
+.header .toggle > input:checked ~ .toggle_label::before {
+  left: 15px;
+  background-color: white;
+}
+
+.header p {
+  font-weight: 700;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 5rem;
+}
+
+.intro h1 {
+  font-weight: 900;
+  font-size: 5rem;
+  opacity: 1;
+  margin-bottom: 1rem;
+}
+
+.listArea {
+  background-color: white;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.listArea-content-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0.5rem;
+}
+
+.listArea-content-list-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listArea-content-list-item-header .fa-star-o:hover {
+  background-color: red;
+}
+
+.listArea-content-list-item-header span:nth-child(2) {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #c6c6c6;
+  margin-right: 0.3rem;
+  text-align: center;
+  line-height: 30px;
+  font-size: .8rem;
+  margin-left: 0.5rem;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.listArea::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.listArea {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.inputArea {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: white;
+}
+
+.inputArea__content input {
+  width: 100%;
+  height: 2.25rem;
+  padding: 5px;
+  outline: none;
+  border: none;
+}

@@ -1,0 +1,136 @@
+
+.list-wrapper{
+    width: 100%;
+}
+
+
+.overlay{
+
+    position: fixed;
+    z-index: 1;
+    height: 3.5rem;
+    width: 25rem;
+    border-bottom: 1px solid $secondaryColor;
+    background-color: $primaryColor;
+    transform: scaleX(0);
+    transition: all 500ms;
+    
+    
+
+    &_content{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        input{
+            
+            width: 80%;
+            height: 3.5rem;
+            font-size:1.2rem;
+            border:none;
+            border-bottom: 1px solid;
+            text-indent: 10px;
+            
+        }
+
+        &_close{
+            
+            width: 10%;
+
+
+            > span{
+                display: block;
+                width: 30px;
+                height: 2px;
+                background-color: $secondaryColor;
+                transform-origin: 12px 1px;
+                
+            }
+
+            > span:nth-child(1){
+                transform: rotate(45deg)
+            }
+            > span:nth-child(2){
+                transform: rotate(-45deg);
+            }
+
+            > span:not(:last-child){
+                margin-bottom: 3px;
+            }
+        }
+
+    }
+    
+}
+
+.open{
+
+    transform: scaleX(1);
+    
+}
+
+
+
+.header{
+    padding:1rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $primaryColor;
+    height: 3.5rem;
+    border:none;
+    border-bottom: 1px solid $secondaryColor;
+        
+
+    .toggle{
+
+        >input{
+            display: none;
+        }
+
+        .toggle_label{
+            position: relative;
+            width: 30px;
+            height: 15px;
+            border-radius: 15px;
+            display: block;
+            border:1px solid $secondaryColor;
+            transition: all 500ms;
+            
+        }
+
+        .toggle_label::before{
+            content : '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: $secondaryColor;
+            top:-1px;
+            left: 0;
+            border-radius: 10px;
+            transform: scale(1.1);
+            transition: all 500ms;
+        }
+
+
+        >input:checked ~ .toggle_label{
+
+            background-color: $secondaryColor;
+            border:1px solid $primaryColor;
+
+
+
+        }
+
+        >input:checked ~ .toggle_label::before{
+            left:15px;
+            background-color: $primaryColor;
+        }
+
+    }
+
+    p{
+        font-weight: 700;
+    }
+}

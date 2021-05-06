@@ -1,0 +1,45 @@
+$fontFamily : 'Montserrat', serif;
+
+* {
+    outline: none;
+    box-sizing: border-box;
+    font-family: $fontFamily;
+    font-weight: 400;
+}
+
+html,body{
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C0CFD6;
+}
+
+html, body,
+ul, ol, header,img{
+    padding: 0;
+    margin: 0;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+button{
+    border:none;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+h1,h2,h3,h4,h5,h6,
+p{
+    margin: 0;
+}
+
+
